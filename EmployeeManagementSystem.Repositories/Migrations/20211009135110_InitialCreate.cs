@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using MySql.EntityFrameworkCore.Metadata;
 
 namespace EmployeeManagementSystem.Repositories.Migrations
@@ -17,7 +16,7 @@ namespace EmployeeManagementSystem.Repositories.Migrations
                     FirstName = table.Column<string>(maxLength: 50, nullable: true),
                     LastName = table.Column<string>(maxLength: 50, nullable: true),
                     Department = table.Column<string>(maxLength: 100, nullable: true),
-                    DateOfBirth = table.Column<DateTime>(nullable: false)
+                    DateOfBirth = table.Column<string>(maxLength: 10, nullable: true)
                 },
                 constraints: table =>
                 {

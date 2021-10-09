@@ -1,0 +1,65 @@
+﻿@model EmployeeManagementSystem.Domain.EmployeeView
+
+@{
+    ViewData["Title"] = "GetEmployee";
+    var hasInfo = (Model != null) && (Model.employeeLis != null) && (Model.employeeLis.Any());
+
+}
+
+<h1>Employees</h1>
+<div class="card-header bg-transparent border-0 row">
+    <div class="col-md-6 col-sm-6">
+        <form action="~/home/GetEmployee">
+            <input class="form-control" name="searchString" placeholder="Search here..." type="text">
+            <button required type="submit">Search </button>
+        </form>
+    </div>
+    <div class="col-md-6 col-sm-6 text-right">
+        <a class="btn-sm btn btn-outline-primary" href="~/Home/AddEmployee" title="AddEmployee">Add Employee  </a>
+    </div>
+</div>
+<br />
+@if (hasInfo)
+{
+    <div class="table-active">
+        <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Date Of Birth</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model.employeeLis)
+            {
+
+                <tbody>
+                    <tr>
+                        <td scope="row">
+                            @item.FirstName
+                        </td>
+                        <td>
+                            @item.LastName
+                        </td>
+                        <td>
+                            @item.Department
+                        </td>
+                        <td>
+                            @item.DateOfBirth
+                        </td>
+
+                    </tr>
+                </tbody>
+
+            }
+
+        </table>
+    </div>
+}
+else
+{
+    <div class="validation-summary-errors">
+        No Record Found
+    </div>
+}

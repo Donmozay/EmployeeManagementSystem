@@ -1,0 +1,35 @@
+﻿@model EmployeeManagementSystem.Domain.EmployeeView
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+<div class="row">
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button> @Model.Message
+    </div>
+    }
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+        <div align="center">
+            <br />
+            <input required type="text" placeholder="User Name" name="userName" Class="form-control" ID="userName" value="@Model.UserName" /><br />
+            <input required type="text" placeholder="Password" name="password" Class="form-control" ID="password" value="@Model.Password" /><br />
+
+            <br />
+            <input type="submit" Class="btn btn-primary" value="Login">
+
+        </div>
+
+    </div>
+</div>
+
+}
+
