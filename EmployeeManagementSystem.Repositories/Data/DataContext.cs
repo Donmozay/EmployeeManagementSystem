@@ -1,0 +1,17 @@
+﻿using EmployeeManagementSystem.Repositories.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace EmployeeManagementSystem.Repositories.Data
+{
+    public class DataContext: DbContext
+    {
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
+        {
+        }
+        public DbSet<Employee> Employee { get; set; }
+
+    }
+}
