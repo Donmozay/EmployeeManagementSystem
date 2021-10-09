@@ -8,10 +8,11 @@ namespace EmployeeManagementSystem.Domain.Factory
 {
     public class EmployeeFactory : IEmployeeFactory
     {
-        public IEmployeeView CreateLoginView()
+        public IEmployeeView CreateLoginView(string errorMessage)
         {
             var view = new EmployeeView
             {
+                ErrorMessage = errorMessage ?? "",
             };
             return view;
         }

@@ -46,9 +46,9 @@ namespace EmployeeManagementSystem.Controllers
             return View("GetEmployee", view);
         }
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult Login( string errorMessage = "")
         {
-            var view = _employeeServices.GetLoginView();
+            var view = _employeeServices.GetLoginView( errorMessage);
             return View("Login", view);
         }
 
@@ -57,9 +57,9 @@ namespace EmployeeManagementSystem.Controllers
         {
             if (login.UserName.ToLower() == "admin" && login.Password.ToLower() == "admin")
             {
-                return this.RedirectToAction("GetEmployee", "Home", new { message = "Login Successfully" });
+                return this.RedirectToAction("GetEmployee", "Home" );
             }
-            return this.RedirectToAction("Login", "Home", new { message = "InValid UserName or Password" });
+            return this.RedirectToAction("Login", "Home", new { errorMessage = "InValid UserName or Password" });
         }
 
         [HttpGet]

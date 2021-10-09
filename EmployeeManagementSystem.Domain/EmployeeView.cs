@@ -21,7 +21,8 @@ namespace EmployeeManagementSystem.Domain
         public string UserName { get; set; }
         [MaxLength(20)]
         public string Password { get; set; }
-        public string Message { get; set; }
+        public string InfoMessage { get; set; }
+        public string ErrorMessage { get; set; }
         public IList<IEmployee> employeeLis { get; set; }
     }
 }

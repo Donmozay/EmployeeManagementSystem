@@ -20,7 +20,8 @@ namespace EmployeeManagementSystem.Interfaces
         public string UserName { get; set; }
         [MaxLength(20)]
         public string Password { get; set; }
-        string Message { get; set; }
+        string InfoMessage { get; set; }
+         string ErrorMessage { get; set; }
         IList<IEmployee> employeeLis { get; set; }
     }
 }

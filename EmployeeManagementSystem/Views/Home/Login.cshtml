@@ -9,14 +9,14 @@
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
 <div class="row">
-    @if (!string.IsNullOrEmpty(Model.Message))
-    {
-
-    <div class="alert alert-info alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button> @Model.Message
+  
+   
+    <div class="col-md-3">
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+             <p style="color:red">@Model.ErrorMessage</p>
+        }
     </div>
-    }
-    <div class="col-md-3"></div>
     <div class="col-md-3">
         <div align="center">
             <br />

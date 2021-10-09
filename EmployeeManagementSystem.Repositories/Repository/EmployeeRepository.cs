@@ -16,19 +16,7 @@ namespace EmployeeManagementSystem.Repositories.Repository
             _context = context;
 
         }
-        //public IEmployee GetEmployeeAsync(int id)
-        //{
-        //    try
-        //    {
-        //        var employee = _context.Employee.FirstOrDefault(x => x.Id == id);
-        //        return employee;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw new ArgumentNullException(" Get Employee Async {0}", e);
-        //    }
-           
-        //}
+        
 
         public IEnumerable<IEmployee> GetEmployees()
         {

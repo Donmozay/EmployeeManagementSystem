@@ -15,9 +15,9 @@ namespace EmployeeManagementSystem.Domain
            _employeeRepository = employeeRepository;
             _employeeFactory = employeeFactory;        
         }
-        public IEmployeeView GetLoginView()
+        public IEmployeeView GetLoginView(string errorMessage)
         {
-            var viewModel = _employeeFactory.CreateLoginView();
+            var viewModel = _employeeFactory.CreateLoginView(errorMessage);
 
             // return the view to controller
             return viewModel;

@@ -6,7 +6,7 @@ namespace EmployeeManagementSystem.Interfaces
 {
     public interface IEmployeeFactory
     {
-        IEmployeeView CreateLoginView();
+        IEmployeeView CreateLoginView(string errorMessage);
 
         IEmployeeView CreateEmployeeView();
 

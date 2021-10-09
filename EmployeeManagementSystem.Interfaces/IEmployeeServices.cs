@@ -6,7 +6,7 @@ namespace EmployeeManagementSystem.Interfaces
 {
     public interface IEmployeeServices
     {
-        IEmployeeView GetLoginView();
+        IEmployeeView GetLoginView( string errorMessage);
 
         IEmployeeView GetEmployee(string searchString);
 
