@@ -4,21 +4,54 @@
     ViewData["Title"] = "AddEmployee";
 }
 
-<h1>AddEmployee</h1>
-
+<h1>Add Employee</h1>
+<br />
 @using (Html.BeginForm("AddEmployee", "Home", FormMethod.Post))
 {
     <div class="row">
 
-        <div class="col-md-3"></div>
-        <div class="col-md-3">
+        <div class="col-md-8">
             <div align="center">
-                <br />
-                <input required type="text" placeholder="First Name" name="firstName" Class="form-control" ID="firstName"value="@Model.FirstName" /><br />
-                <input required type="text" placeholder="Last Name" name="lastName" Class="form-control" ID="lastName"  value="@Model.LastName"/><br />
-                <input required type="text"  placeholder="Department" name="department" Class="form-control" ID="department"  value="@Model.Department"/><br />
-                <input required type="date" placeholder="Date Of Birth" name="dateOfBirth" Class="form-control" ID="dateOfBirth"  value="@Model.DateOfBirth"/><br />
-                <br />
+                <div class="form-row mb-3">
+                    <div class="col-md-2">
+                        <label class="float-left" style="font-size: 15px;">First Name</label>
+                    </div>
+
+                    <div class="col-md-9">
+                        <input required type="text" name="firstName" Class="form-control" ID="firstName" value="@Model.FirstName" /><br />
+                    </div>
+                </div>
+
+                <div class="form-row mb-3">
+                    <div class="col-md-2">
+                        <label class="float-left" style="font-size: 15px;">Last Name</label>
+                    </div>
+
+                    <div class="col-md-9">
+                        <input required type="text" name="lastName" Class="form-control" ID="lastName" value="@Model.LastName" /><br />
+                    </div>
+                </div>
+
+                <div class="form-row mb-3">
+                    <div class="col-md-2">
+                        <label class="float-left" style="font-size: 15px;">Date Of Birth </label>
+                    </div>
+
+                    <div class="col-md-9">
+                        <input required type="date" name="dateOfBirth" Class="form-control" ID="dateOfBirth" value="@Model.DateOfBirth" /><br />
+                    </div>
+                </div>
+
+                <div class="form-row mb-3">
+                    <div class="col-md-2">
+                        <label class="float-left" style="font-size: 15px;">Department</label>
+                    </div>
+
+                    <div class="col-md-9">
+                        <input required type="text" name="department" Class="form-control" ID="department" value="@Model.Department" /><br />
+                    </div>
+                </div>
+
                 <input type="submit" Class="btn btn-primary" value="Submit">
 
             </div>
