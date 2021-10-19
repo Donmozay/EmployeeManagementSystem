@@ -10,6 +10,6 @@ namespace EmployeeManagementSystem.Interfaces
 
         IEmployeeView CreateEmployeeView();
 
-        IEmployeeView CreateEmployeeListView(IList<IEmployee> employees, string searchString);
+        IEmployeeView CreateEmployeeListView(IList<IEmployee> employees);
     }
 }

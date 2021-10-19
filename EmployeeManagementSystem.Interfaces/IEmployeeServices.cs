@@ -8,7 +8,7 @@ namespace EmployeeManagementSystem.Interfaces
     {
         IEmployeeView GetLoginView( string errorMessage);
 
-        IEmployeeView GetEmployee(string searchString);
+        IEmployeeView GetEmployee();
 
         IEmployeeView GetEmployeeView();
 

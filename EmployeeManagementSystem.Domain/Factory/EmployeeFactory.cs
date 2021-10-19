@@ -24,23 +24,11 @@ namespace EmployeeManagementSystem.Domain.Factory
             return view;
         }
 
-        public IEmployeeView CreateEmployeeListView(IList<IEmployee> employees, string searchString)
+        public IEmployeeView CreateEmployeeListView(IList<IEmployee> employees)
         {
-            searchString = string.IsNullOrEmpty(searchString) ? "" : searchString.ToLower();
-            var filteredList = employees.Where(x =>
-              x.FirstName.ToLower().Contains(string.IsNullOrEmpty(searchString)
-              ? x.FirstName.ToLower() : searchString) ||
-              (x.LastName.ToLower()).Contains(string.IsNullOrEmpty(searchString)
-              ? x.LastName.ToLower() : searchString) ||
-               (x.Department.ToLower()).Contains(string.IsNullOrEmpty(searchString)
-              ? x.Department.ToLower() : searchString) ||
-               (x.DateOfBirth.ToLower()).Contains(string.IsNullOrEmpty(searchString)
-              ? x.DateOfBirth.ToLower() : searchString)) ;
             var view = new EmployeeView
             {
-                employeeLis = filteredList.ToList(),
-                searchString = (searchString == "Name" ? "" : ""),
-
+                employeeLis = employees
             };
             return view;
         }

@@ -6,8 +6,8 @@
 
 <h1>Add Employee</h1>
 <br />
-@using (Html.BeginForm("AddEmployee", "Home", FormMethod.Post))
-{
+
+
     <div class="row">
 
         <div class="col-md-8">
@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="col-md-9">
-                        <input required type="text" name="firstName" Class="form-control" ID="firstName" value="@Model.FirstName" /><br />
+                        <input required type="text" id="firstName" name="firstName" Class="form-control" ID="firstName" value="@Model.FirstName" /><br />
                     </div>
                 </div>
 
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="col-md-9">
-                        <input required type="text" name="lastName" Class="form-control" ID="lastName" value="@Model.LastName" /><br />
+                        <input required type="text" id="lastName"name="lastName" Class="form-control" ID="lastName" value="@Model.LastName" /><br />
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="col-md-9">
-                        <input required type="date" name="dateOfBirth" Class="form-control" ID="dateOfBirth" value="@Model.DateOfBirth" /><br />
+                        <input required type="date" id="dateOfBirth"name="dateOfBirth" Class="form-control" ID="dateOfBirth" value="@Model.DateOfBirth" /><br />
                     </div>
                 </div>
 
@@ -48,15 +48,19 @@
                     </div>
 
                     <div class="col-md-9">
-                        <input required type="text" name="department" Class="form-control" ID="department" value="@Model.Department" /><br />
+                        <input required type="text" id="department"name="department" Class="form-control" ID="department" value="@Model.Department" /><br />
                     </div>
                 </div>
 
-                <input type="submit" Class="btn btn-primary" value="Submit">
+                <input  onclick="submitFunction()" style="cursor:pointer;" Class="btn btn-primary" value="Submit">
 
             </div>
 
         </div>
     </div>
+
+
+@section Scripts{
+    <script src="~/Script/services.js"></script>
 
 }

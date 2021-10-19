@@ -39,11 +39,17 @@ namespace EmployeeManagementSystem.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetEmployee(string searchString)
+        public IActionResult GetEmployee()
         {
-            var view = _employeeServices.GetEmployee(searchString);
+            var view = _employeeServices.GetEmployee();
 
-            return View("GetEmployee", view);
+            return PartialView("GetEmployee", view);
+        }
+
+        [HttpGet]
+        public IActionResult Employees()
+        {
+            return View("Employees");
         }
         [HttpGet]
         public IActionResult Login( string errorMessage = "")
@@ -55,9 +61,9 @@ namespace EmployeeManagementSystem.Controllers
         [HttpPost]
         public IActionResult Login(EmployeeView login)
         {
-            if (login.UserName.ToLower() == "admin" && login.Password.ToLower() == "admin")
+            if (login.UserName.ToLower() == "admin" && login.Password == "Admin")
             {
-                return this.RedirectToAction("GetEmployee", "Home" );
+                return this.RedirectToAction("Employees", "Home" );
             }
             return this.RedirectToAction("Login", "Home", new { errorMessage = "InValid UserName or Password" });
         }
@@ -66,7 +72,7 @@ namespace EmployeeManagementSystem.Controllers
         public IActionResult AddEmployee()
         {
             var view = _employeeServices.GetEmployeeView();
-            return View("AddEmployee", view);
+            return PartialView("AddEmployee", view);
         }
 
         [HttpPost]
@@ -80,7 +86,7 @@ namespace EmployeeManagementSystem.Controllers
 
             if (!string.IsNullOrEmpty(returnInfo))
             {
-                return View("AddEmployee");
+                return PartialView("AddEmployee");
             }
             return RedirectToAction("GetEmployee");
         }

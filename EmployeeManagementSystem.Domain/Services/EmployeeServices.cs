@@ -22,11 +22,11 @@ namespace EmployeeManagementSystem.Domain
             // return the view to controller
             return viewModel;
         }
-        public IEmployeeView GetEmployee(string searchString)
+        public IEmployeeView GetEmployee()
         {
           var employees =  _employeeRepository.GetEmployees().ToList();
 
-           return   _employeeFactory.CreateEmployeeListView(employees,searchString);
+           return   _employeeFactory.CreateEmployeeListView(employees);
         }
 
        
