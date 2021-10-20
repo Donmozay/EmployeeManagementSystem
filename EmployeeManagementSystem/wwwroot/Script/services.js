@@ -44,6 +44,13 @@ function submitFunction() {
     var lastName = $("#lastName").val();
     var dateOfBirth = $("#dateOfBirth").val();
     var department = $("#department").val();
+
+    if (document.getElementById('firstName').value == '') { alert('field is required for First Name '); return }
+    if (document.getElementById('lastName').value == '') { alert('field is required for Last Name '); return }
+    if (document.getElementById('dateOfBirth').value == '') { alert('field is required for Date Of Birth'); return }
+    if (document.getElementById('department').value == '') { alert('field is required for Department'); return }
+   
+       
     $("#list").empty();
     $(".loader").show();
     $.ajax({
